@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Greenpp</string>
+    <string name="title_activity_setting">Setting</string>
+    <string name="access_token" translatable="false">pk.eyJ1IjoiYWJkZWxraGFsZWsiLCJhIjoiY2s0cmRiNzI0MGFmazNnbjBob2lxd3I0MCJ9.brZ5-XRCKC_20JyhrY9bxw</string>
+</resources>

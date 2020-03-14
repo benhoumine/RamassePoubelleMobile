@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/manual"
+        android:title="Manual Config"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/auto"
+        android:title="Auto Config"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/addplant"
+        android:title="ajouter plante"
+        app:showAsAction="never"
+        />
+
+</menu>
