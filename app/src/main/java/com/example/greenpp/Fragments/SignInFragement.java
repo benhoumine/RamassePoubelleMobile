@@ -62,6 +62,7 @@ public class SignInFragement extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        System.out.println("Fragment SignIn");
         super.onViewCreated(view, savedInstanceState);
         Log.i(TAG, "Lunched");
         ButterKnife.bind(this, view);

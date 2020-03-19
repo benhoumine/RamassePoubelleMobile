@@ -12,6 +12,7 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        System.out.println("Activité Login");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         navigateTo(SignInFragement.newInstance());

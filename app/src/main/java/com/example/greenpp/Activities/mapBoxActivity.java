@@ -4,6 +4,8 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.greenpp.Entities.Jardin;
+import com.google.gson.Gson;
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
@@ -16,15 +18,23 @@ public class mapBoxActivity extends AppCompatActivity implements
         OnMapReadyCallback {
 
     private MapView mapView;
+    private Jardin jardin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        System.out.println("Activité MapBox");
         super.onCreate(savedInstanceState);
         Mapbox.getInstance(this, getString(R.string.access_token));
         setContentView(R.layout.activity_map_box);
         mapView = findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
+
+        String jardinJSON = getIntent().getExtras().getString("JARDIN_JSON");
+        Gson gson = new Gson();
+        this.jardin = gson.fromJson(jardinJSON, Jardin.class);
+
+        System.out.println("Dans Maps jardin : " + this.jardin.getNomJardin());
     }
 
     @Override

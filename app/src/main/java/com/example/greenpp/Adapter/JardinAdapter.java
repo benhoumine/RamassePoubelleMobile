@@ -12,7 +12,9 @@ import android.widget.TextView;
 import com.example.greenpp.Activities.MainActivity;
 import com.example.greenpp.Activities.mapBoxActivity;
 import com.example.greenpp.Entities.Jardin;
+import com.example.greenpp.Interfaces.RecyclerViewClickListener;
 import com.example.greenpp.R;
+import com.google.gson.Gson;
 
 import java.util.List;
 
@@ -20,10 +22,12 @@ public class JardinAdapter extends RecyclerView.Adapter<JardinAdapter.ViewHolder
 
     private List<Jardin> jardins;
     private MainActivity context;
+    private static RecyclerViewClickListener itemListener;
 
-    public JardinAdapter(MainActivity context, List<Jardin> plantes) {
+    public JardinAdapter(MainActivity context, RecyclerViewClickListener itemListener, List<Jardin> plantes) {
         this.context = context;
         this.jardins = plantes;
+        this.itemListener = itemListener;
     }
 
     @NonNull
@@ -50,7 +54,7 @@ public class JardinAdapter extends RecyclerView.Adapter<JardinAdapter.ViewHolder
         return jardins.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public ImageView imageView;
         public TextView textViewTitle;
         public TextView textViewBody;
@@ -67,12 +71,24 @@ public class JardinAdapter extends RecyclerView.Adapter<JardinAdapter.ViewHolder
                 public void onClick(View v) {
                     int position = getAdapterPosition();
                     if (position != RecyclerView.NO_POSITION) {
-                        Jardin plante = jardins.get(position);
+                        Jardin jardin = jardins.get(position);
+
+                        Gson gson = new Gson();
+                        String jardinJson = gson.toJson(jardin);
+
+                        System.out.println("Le jardin selectionné est : " + jardinJson);
                         Intent intent = new Intent(context, mapBoxActivity.class);
+                        intent.putExtra("JARDIN_JSON", jardinJson);
                         context.startActivity(intent);
                     }
                 }
             });
+            //view.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            itemListener.recyclerViewListClicked(view, this.getPosition());
         }
     }
     public void addAllItems(List<Jardin> jardins) {

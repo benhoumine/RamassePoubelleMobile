@@ -41,6 +41,7 @@ public class AddPlantFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        System.out.println("Fragment AddPlant?");
         view = inflater.inflate(R.layout.add_plant_fragement, container, false);
         ButterKnife.bind(this, view);
         return view;
