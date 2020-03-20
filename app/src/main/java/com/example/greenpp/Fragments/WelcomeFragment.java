@@ -46,6 +46,6 @@ public class WelcomeFragment extends Fragment {
     @OnClick(R.id.start_btn)
     public void start(View view) {
         Log.i(TAG, "start: Clicked");
-        activity.navigateTo(JardinRecycler.newInstance());
+        activity.navigateTo(PoubelleRecycler.newInstance());
     }
 }

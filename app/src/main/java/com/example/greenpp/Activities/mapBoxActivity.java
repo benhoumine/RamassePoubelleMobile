@@ -5,15 +5,17 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.greenpp.Entities.Jardin;
+import com.example.greenpp.Entities.Poubelle;
 import com.example.greenpp.R;
 import com.google.gson.Gson;
 import com.mapbox.geojson.Feature;
 import com.mapbox.geojson.FeatureCollection;
 import com.mapbox.geojson.Point;
 import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.annotations.Marker;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
+import com.mapbox.mapboxsdk.maps.MapboxMap.OnMarkerClickListener;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
 import com.mapbox.mapboxsdk.style.layers.PropertyFactory;
@@ -29,10 +31,11 @@ import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconOffset;
 
 
 public class mapBoxActivity extends AppCompatActivity implements
-        OnMapReadyCallback {
+        OnMapReadyCallback, OnMarkerClickListener {
 
+    private MapboxMap mapboxMap;
     private MapView mapView;
-    private Jardin jardin;
+    private Poubelle poubelle;
     private static final String SOURCE_ID = "SOURCE_ID";
     private static final String ICON_ID = "ICON_ID";
     private static final String LAYER_ID = "LAYER_ID";
@@ -49,11 +52,11 @@ public class mapBoxActivity extends AppCompatActivity implements
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
 
-        String jardinJSON = getIntent().getExtras().getString("JARDIN_JSON");
+        String poubelleJson = getIntent().getExtras().getString("POUBELLE_JSON");
         Gson gson = new Gson();
-        this.jardin = gson.fromJson(jardinJSON, Jardin.class);
+        this.poubelle = gson.fromJson(poubelleJson, Poubelle.class);
 
-        System.out.println("Dans Maps jardin : " + this.jardin.getNomJardin());
+        System.out.println("Dans Maps jardin : " + this.poubelle.getId());
     }
 
     @Override
@@ -84,6 +87,8 @@ public class mapBoxActivity extends AppCompatActivity implements
                     }
                 }
         );
+        mapboxMap.setOnMarkerClickListener(this);
+        this.mapboxMap = mapboxMap;
     }
 
     @Override
@@ -126,5 +131,13 @@ public class mapBoxActivity extends AppCompatActivity implements
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         mapView.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public boolean onMarkerClick(@NonNull Marker marker) {
+        marker.setSnippet(marker.getPosition().getLatitude()+" "+marker.getPosition().getLongitude());
+        marker.showInfoWindow(mapboxMap,mapView);
+        System.out.println("Vous avez cliqué un marker");
+        return false;
     }
 }
