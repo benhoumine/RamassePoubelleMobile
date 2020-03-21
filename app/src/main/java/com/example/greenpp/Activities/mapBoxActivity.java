@@ -63,11 +63,11 @@ public class mapBoxActivity extends AppCompatActivity implements
     public void onMapReady(@NonNull final MapboxMap mapboxMap) {
         List<Feature> symbolLayerIconFeatureList = new ArrayList<>();
         symbolLayerIconFeatureList.add(Feature.fromGeometry(
-                Point.fromLngLat(3.0925838947296143, 45.771724700927734)));
-        symbolLayerIconFeatureList.add(Feature.fromGeometry(
+                Point.fromLngLat(this.poubelle.getLongitude(), this.poubelle.getLatitude())));
+        /*symbolLayerIconFeatureList.add(Feature.fromGeometry(
                 Point.fromLngLat(3.1215284, 45.7625999)));
         symbolLayerIconFeatureList.add(Feature.fromGeometry(
-                Point.fromLngLat(6.3016029, 46.927027)));
+                Point.fromLngLat(6.3016029, 46.927027)));*/
 
         mapboxMap.setStyle(new Style.Builder().fromUri("mapbox://styles/mapbox/cjf4m44iw0uza2spb3q0a7s41")
                 .withImage(ICON_ID, BitmapFactory.decodeResource(
