@@ -47,6 +47,13 @@ public class PoubelleAdapter extends RecyclerView.Adapter<PoubelleAdapter.ViewHo
         viewHolder.textViewTitle.setText(poubelle.getAdresse());
         viewHolder.textViewBody.setText("Capacité : " + poubelle.getCapacity().toString() + "  Contenu : " + poubelle.getContenu().toString());
         // String Descrption = plante.getTypePlante() + " " + plante.getCaractertique();
+        if(poubelle.getContenu().intValue()==poubelle.getCapacity().intValue())
+            viewHolder.imageView.setImageResource(R.drawable.red);
+        else if(poubelle.getContenu()>=poubelle.getCapacity()/2)
+            viewHolder.imageView.setImageResource(R.drawable.full);
+        else
+            viewHolder.imageView.setImageResource(R.drawable.empty);
+
     }
 
     @Override
