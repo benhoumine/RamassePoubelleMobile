@@ -7,6 +7,27 @@ public class Poubelle {
     private Double longitude ;
     private Double latitude ;
     private Double capacity ;
+    private String adresse;
+    private Double contenu;
+
+    public Poubelle(Long id, Double longitude, Double latitude, Double capacity, String adresse, Double contenu) {
+        super();
+        this.id = id;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.capacity = capacity;
+        this.adresse = adresse;
+        this.contenu = contenu;
+    }
+
+    public Poubelle(Long id, Double longitude, Double latitude, Double capacity, String adresse) {
+        super();
+        this.id = id;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.capacity = capacity;
+        this.adresse = adresse;
+    }
 
     public Poubelle() {
     }
@@ -41,9 +62,31 @@ public class Poubelle {
     public void setCapacity(Double capacity) {
         this.capacity = capacity;
     }
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+
+    public Double getContenu() {
+        return contenu;
+    }
+
+    public void setContenu(Double contenu) {
+        this.contenu = contenu;
+    }
+
     @Override
     public String toString() {
-        return "Poubelle [id=" + id + ", longitude=" + longitude + ", latitude=" + latitude + ", capacity=" + capacity
-                + "]";
+        return "Poubelle{" +
+                "id=" + id +
+                ", longitude=" + longitude +
+                ", latitude=" + latitude +
+                ", capacity=" + capacity +
+                ", adresse='" + adresse + '\'' +
+                ", contenu=" + contenu +
+                '}';
     }
 }

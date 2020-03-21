@@ -94,6 +94,7 @@ public class PoubelleRecycler extends Fragment implements RecyclerViewClickListe
                     PoubelleRecycler.poubelles = gson.fromJson(responseJSONArray.toString(),  new TypeToken<List<Poubelle>>(){}.getType());
                     for(int i=0; i<poubelles.size(); i++) {
                         System.out.println("Poubelle " + i + " lat : " + poubelles.get(i).getLatitude() + " long : " + poubelles.get(i).getLongitude());
+                        System.out.println("\n\n"+poubelles.get(i).toString());
                     }
                     activity = (MainActivity) getActivity();
 

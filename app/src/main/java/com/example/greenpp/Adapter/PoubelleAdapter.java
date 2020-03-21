@@ -44,8 +44,8 @@ public class PoubelleAdapter extends RecyclerView.Adapter<PoubelleAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         Poubelle poubelle = poubelles.get(i);
         viewHolder.delete.setImageResource(R.drawable.close);
-        viewHolder.textViewTitle.setText(poubelle.getLatitude().toString());
-        viewHolder.textViewBody.setText("Vide");
+        viewHolder.textViewTitle.setText(poubelle.getAdresse());
+        viewHolder.textViewBody.setText("Capacité : " + poubelle.getCapacity().toString() + "  Contenu : " + poubelle.getContenu().toString());
         // String Descrption = plante.getTypePlante() + " " + plante.getCaractertique();
     }
 
