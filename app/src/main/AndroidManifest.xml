@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".Activities.ActionActivity"></activity>
         <activity android:name=".Activities.MainActivity" />
         <activity android:name=".Activities.LoginActivity">
             <intent-filter>
@@ -21,7 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.mapBoxActivity"></activity>
+        <activity android:name=".Activities.mapBoxActivity" />
     </application>
 
 </manifest>

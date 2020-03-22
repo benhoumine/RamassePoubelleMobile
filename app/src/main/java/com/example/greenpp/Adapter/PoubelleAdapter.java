@@ -6,9 +6,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.greenpp.Activities.ActionActivity;
 import com.example.greenpp.Activities.MainActivity;
 import com.example.greenpp.Activities.mapBoxActivity;
 import com.example.greenpp.Entities.Poubelle;
@@ -54,6 +56,15 @@ public class PoubelleAdapter extends RecyclerView.Adapter<PoubelleAdapter.ViewHo
         else
             viewHolder.imageView.setImageResource(R.drawable.empty);
 
+        viewHolder.buttonAction.setOnClickListener(view -> {
+            Gson gson = new Gson();
+            String poubelleJson = gson.toJson(poubelle);
+
+            Intent intent = new Intent(context,ActionActivity.class)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra("POUBELLE_JSON", poubelleJson);
+            context.startActivity(intent);
+        });
     }
 
     @Override
@@ -66,6 +77,7 @@ public class PoubelleAdapter extends RecyclerView.Adapter<PoubelleAdapter.ViewHo
         public TextView textViewTitle;
         public TextView textViewBody;
         public ImageView delete;
+        public Button buttonAction;
 
         ViewHolder(View view) {
             super(view);
@@ -73,6 +85,7 @@ public class PoubelleAdapter extends RecyclerView.Adapter<PoubelleAdapter.ViewHo
             textViewTitle = view.findViewById(R.id.textViewTitle);
             textViewBody = view.findViewById(R.id.textViewBody);
             delete = view.findViewById(R.id.close);
+            buttonAction = view.findViewById(R.id.buttonAction);
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
