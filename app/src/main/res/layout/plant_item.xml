@@ -45,6 +45,19 @@
             android:text="Plant Type + Description"
             android:textSize="15sp" />
 
+        <Button
+            android:id="@+id/buttonAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="Action"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_toEndOf="@+id/imageView"
+            android:textSize="15sp"
+            android:padding="5dp"
+            />
+
         <ImageView
             android:id="@+id/close"
             android:layout_width="15dp"
