@@ -24,6 +24,49 @@ public class ActionActivity extends AppCompatActivity {
         buttonVider.setOnClickListener(view -> {
             this.poubelle.setCapacity(0.0);
             //Update capacity in bdd
+
+
+            /*String url = Parameters.URL_SERVER+Parameters.PORT+"/poubelles/savepoubelle";
+            RequestQueue queue = Volley.newRequestQueue(this);
+            StringRequest postRequest = new StringRequest(Request.Method.POST, url,
+                    new Response.Listener<String>()
+                    {
+                        @Override
+                        public void onResponse(String response) {
+                            System.out.println("Yesssssss!");
+
+                        }
+                    },
+                    new Response.ErrorListener()
+                    {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+
+                            System.out.println(error);
+
+                        }
+                    }
+            ) {
+                @Override
+                protected Map<String, String> getParams()
+                {
+                    Map<String, String> params = new HashMap<>();
+                    params.put("poubelle", ActionActivity.this.poubelle.toString());
+                    System.out.println("parameter :"+params);
+                    return params;
+                }
+
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    HashMap headers = new HashMap();
+                    headers.put("Content-Type","application/x-www-form-urlencoded");
+                    return headers;
+
+                }
+            };
+            queue.add(postRequest);*/
+
+
         });
     }
 }
