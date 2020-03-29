@@ -2,6 +2,7 @@ package com.example.greenpp.Activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.Button;
 
 import com.android.volley.Request;
@@ -14,6 +15,9 @@ import com.example.greenpp.Entities.Poubelle;
 import com.example.greenpp.Helper.Parameters;
 import com.example.greenpp.R;
 import com.google.gson.Gson;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class ActionActivity extends AppCompatActivity {
 
@@ -29,34 +33,38 @@ public class ActionActivity extends AppCompatActivity {
         this.poubelle = gson.fromJson(poubelleJson, Poubelle.class);
         this.buttonVider = (Button) findViewById(R.id.buttonVider);
         buttonVider.setOnClickListener(view -> {
-            this.poubelle.setCapacity(0.0);
-            //Update capacity in bdd
 
-
-            String url = Parameters.URL_SERVER+Parameters.PORT+"/poubelles/save?id="+this.poubelle.getId().toString();
-            RequestQueue queue = Volley.newRequestQueue(this.getApplicationContext());
-
-            StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            System.out.println("helo clicked");
+            RequestQueue queue = Volley.newRequestQueue(ActionActivity.this);
+            String url = Parameters.URL_SERVER+Parameters.PORT+"/poubelles/vider";
+            StringRequest postRequest = new StringRequest(Request.Method.POST, url,
+                    new Response.Listener<String>()
+                    {
+                        @Override
+                        public void onResponse(String response) {
+                            // response
+                            Log.d("Response", response);
+                        }
+                    },
+                    new Response.ErrorListener()
+                    {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            // error
+                            Log.d("error", String.valueOf(error));
+                        }
+                    }
+            ) {
                 @Override
-                public void onResponse(String response) {
-                    /*Poubelle poubelle = new Poubelle();
-                    boolean res = employe.authentification(JsonParser.JsonBenevoleArray(response));
-                    if(res){
-                        System.out.println("Poubelle mis à jour !!!");
-
-                    }else{
-                        System.out.println("Errrrrrrrrrrrrrrrrrrrrooooooooooooooooor");
-                    }*/
-                    System.out.println("Response : " + response);
+                protected Map<String, String> getParams()
+                {
+                    Map<String, String> params = new HashMap<>();
+                    System.out.println("Poubelle à vider : " + ActionActivity.this.poubelle.getId().toString());
+                    params.put("id",ActionActivity.this.poubelle.getId().toString());
+                    return params;
                 }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    System.out.println(error);
-                }
-            });
-
-            queue.add(stringRequest);
+            };
+            queue.add(postRequest);
 
 
         });

@@ -6,20 +6,12 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="system.out" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="system" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26d8abc0-db3a-45ba-ab86-362a30bbc658" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/greenpp/Activities/ActionActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/greenpp/Activities/ActionActivity.java" afterDir="false" />
-    </list>
+    <list default="true" id="26d8abc0-db3a-45ba-ab86-362a30bbc658" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +54,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/greenpp/Fragments/PoubelleRecycler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="96" column="70" lean-forward="true" selection-start-line="96" selection-start-column="70" selection-end-line="96" selection-end-column="70" />
+              <caret line="96" column="70" selection-start-line="96" selection-start-column="70" selection-end-line="96" selection-end-column="70" />
               <folding>
                 <element signature="e#4660#4661#0" expanded="true" />
                 <element signature="e#4706#4707#0" expanded="true" />
@@ -71,24 +63,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/greenpp/Activities/ActionActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="35" column="79" lean-forward="true" selection-start-line="35" selection-start-column="79" selection-end-line="35" selection-end-column="79" />
-              <folding>
-                <element signature="e#2351#2352#0" expanded="true" />
-                <element signature="e#2416#2417#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="36">
+              <caret line="38" column="80" selection-start-line="38" selection-start-column="80" selection-end-line="38" selection-end-column="80" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/greenpp/Fragments/SignInFragement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="116" column="1" lean-forward="true" selection-start-line="116" selection-start-column="1" selection-end-line="116" selection-end-column="1" />
+            <state relative-caret-position="85">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
             </state>
           </provider>
         </entry>
@@ -242,6 +230,7 @@
     <option name="width" value="2400" />
     <option name="height" value="1350" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -257,31 +246,6 @@
             </path>
             <path>
               <item name="RamassePoubelleMobile" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="RamassePoubelleMobile" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="greenpp" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RamassePoubelleMobile" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="greenpp" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="Activities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RamassePoubelleMobile" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="greenpp" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="Fragments" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RamassePoubelleMobile" type="1abcf292:AndroidViewProjectNode" />
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
@@ -290,6 +254,7 @@
       </pane>
       <pane id="ProjectPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -446,7 +411,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29060403" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29060403" />
       <window_info id="Structure" order="1" weight="0.24969475" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" side_tool="true" />
@@ -465,7 +430,7 @@
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.8208054" weight="0.36685553" />
       <window_info anchor="bottom" id="Android Profiler" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.17919463" side_tool="true" weight="0.36827195" />
-      <window_info anchor="bottom" id="Logcat" order="10" visible="true" weight="0.28186968" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="10" visible="true" weight="0.28186968" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32958034" />
       <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.497558" weight="0.32733223" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32958034" />
@@ -479,6 +444,39 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Build Variants" order="0" side_tool="true" />
+      <window_info id="Capture Tool" order="1" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.17460318" />
+      <window_info id="Structure" order="6" weight="0.25" />
+      <window_info id="Captures" order="7" weight="0.25" />
+      <window_info anchor="bottom" id="Android Profiler" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.17826618" side_tool="true" weight="0.32958034" />
+      <window_info anchor="bottom" id="Logcat" order="2" />
+      <window_info anchor="bottom" id="Build" order="3" sideWeight="0.82173383" weight="0.32958034" />
+      <window_info anchor="bottom" id="Messages" order="4" weight="0.32958034" />
+      <window_info anchor="bottom" id="Version Control" order="5" weight="0.32958034" />
+      <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.497558" weight="0.32958034" />
+      <window_info anchor="bottom" id="Message" order="7" />
+      <window_info anchor="bottom" id="Find" order="8" />
+      <window_info anchor="bottom" id="Run" order="9" sideWeight="0.497558" visible="true" weight="0.32958034" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.39918116" />
+      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="13" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Palette&#9;" order="1" />
+      <window_info anchor="right" id="Capture Analysis" order="2" />
+      <window_info anchor="right" id="Preview" order="3" weight="0.32967034" />
+      <window_info anchor="right" id="Gradle" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Commander" order="6" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.24969475" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="RECENT_FILTERS">
@@ -853,7 +851,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/greenpp/Fragments/PoubelleRecycler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="96" column="70" lean-forward="true" selection-start-line="96" selection-start-column="70" selection-end-line="96" selection-end-column="70" />
+          <caret line="96" column="70" selection-start-line="96" selection-start-column="70" selection-end-line="96" selection-end-column="70" />
           <folding>
             <element signature="e#4660#4661#0" expanded="true" />
             <element signature="e#4706#4707#0" expanded="true" />
@@ -861,21 +859,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/greenpp/Activities/ActionActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/greenpp/Fragments/SignInFragement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="35" column="79" lean-forward="true" selection-start-line="35" selection-start-column="79" selection-end-line="35" selection-end-column="79" />
-          <folding>
-            <element signature="e#2351#2352#0" expanded="true" />
-            <element signature="e#2416#2417#0" expanded="true" />
-          </folding>
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/greenpp/Fragments/SignInFragement.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/greenpp/Activities/ActionActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="116" column="1" lean-forward="true" selection-start-line="116" selection-start-column="1" selection-end-line="116" selection-end-column="1" />
+        <state relative-caret-position="36">
+          <caret line="38" column="80" selection-start-line="38" selection-start-column="80" selection-end-line="38" selection-end-column="80" />
         </state>
       </provider>
     </entry>
