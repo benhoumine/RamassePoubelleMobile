@@ -11,8 +11,9 @@
         android:id="@+id/buttonVider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Vider la poubelle"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="50dp"
+        android:onClick="onClickButton"
+        android:text="Vider la poubelle" />
 
 </LinearLayout>
