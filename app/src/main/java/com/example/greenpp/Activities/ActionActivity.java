@@ -4,7 +4,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.greenpp.Entities.Poubelle;
+import com.example.greenpp.Helper.Parameters;
 import com.example.greenpp.R;
 import com.google.gson.Gson;
 
@@ -26,45 +33,30 @@ public class ActionActivity extends AppCompatActivity {
             //Update capacity in bdd
 
 
-            /*String url = Parameters.URL_SERVER+Parameters.PORT+"/poubelles/savepoubelle";
-            RequestQueue queue = Volley.newRequestQueue(this);
-            StringRequest postRequest = new StringRequest(Request.Method.POST, url,
-                    new Response.Listener<String>()
-                    {
-                        @Override
-                        public void onResponse(String response) {
-                            System.out.println("Yesssssss!");
+            String url = Parameters.URL_SERVER+Parameters.PORT+"/poubelles/save?id="+this.poubelle.getId().toString();
+            RequestQueue queue = Volley.newRequestQueue(this.getApplicationContext());
 
-                        }
-                    },
-                    new Response.ErrorListener()
-                    {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-
-                            System.out.println(error);
-
-                        }
-                    }
-            ) {
+            StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
                 @Override
-                protected Map<String, String> getParams()
-                {
-                    Map<String, String> params = new HashMap<>();
-                    params.put("poubelle", ActionActivity.this.poubelle.toString());
-                    System.out.println("parameter :"+params);
-                    return params;
-                }
+                public void onResponse(String response) {
+                    /*Poubelle poubelle = new Poubelle();
+                    boolean res = employe.authentification(JsonParser.JsonBenevoleArray(response));
+                    if(res){
+                        System.out.println("Poubelle mis à jour !!!");
 
+                    }else{
+                        System.out.println("Errrrrrrrrrrrrrrrrrrrrooooooooooooooooor");
+                    }*/
+                    System.out.println("Response : " + response);
+                }
+            }, new Response.ErrorListener() {
                 @Override
-                public Map<String, String> getHeaders() throws AuthFailureError {
-                    HashMap headers = new HashMap();
-                    headers.put("Content-Type","application/x-www-form-urlencoded");
-                    return headers;
-
+                public void onErrorResponse(VolleyError error) {
+                    System.out.println(error);
                 }
-            };
-            queue.add(postRequest);*/
+            });
+
+            queue.add(stringRequest);
 
 
         });
