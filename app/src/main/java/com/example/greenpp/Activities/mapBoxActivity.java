@@ -4,15 +4,22 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import com.example.greenpp.Entities.Poubelle;
 import com.example.greenpp.R;
 import com.google.gson.Gson;
+import com.mapbox.android.core.permissions.PermissionsListener;
+import com.mapbox.android.core.permissions.PermissionsManager;
 import com.mapbox.geojson.Feature;
 import com.mapbox.geojson.FeatureCollection;
 import com.mapbox.geojson.Point;
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.annotations.Marker;
+import com.mapbox.mapboxsdk.location.LocationComponent;
+import com.mapbox.mapboxsdk.location.LocationComponentActivationOptions;
+import com.mapbox.mapboxsdk.location.modes.CameraMode;
+import com.mapbox.mapboxsdk.location.modes.RenderMode;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.MapboxMap.OnMarkerClickListener;
@@ -31,7 +38,7 @@ import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconOffset;
 
 
 public class mapBoxActivity extends AppCompatActivity implements
-        OnMapReadyCallback, OnMarkerClickListener {
+        OnMapReadyCallback, OnMarkerClickListener , PermissionsListener {
 
     private MapboxMap mapboxMap;
     private MapView mapView;
@@ -40,7 +47,7 @@ public class mapBoxActivity extends AppCompatActivity implements
     private static final String ICON_ID = "ICON_ID";
     private static final String LAYER_ID = "LAYER_ID";
 
-
+    private PermissionsManager permissionsManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +89,7 @@ public class mapBoxActivity extends AppCompatActivity implements
                     @Override
                     public void onStyleLoaded(@NonNull Style style) {
 
-
+                        enableLocationComponent(style);
 
                     }
                 }
@@ -139,5 +146,56 @@ public class mapBoxActivity extends AppCompatActivity implements
         marker.showInfoWindow(mapboxMap,mapView);
         System.out.println("Vous avez cliqué un marker");
         return false;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        permissionsManager.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    @Override
+    public void onExplanationNeeded(List<String> permissionsToExplain) {
+        Toast.makeText(this, "Autorisation d'accéder à la position", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onPermissionResult(boolean granted) {
+        if (granted) {
+            mapboxMap.getStyle(new Style.OnStyleLoaded() {
+                @Override
+                public void onStyleLoaded(@NonNull Style style) {
+                    enableLocationComponent(style);
+                }
+            });
+        } else {
+            Toast.makeText(this, "Accès non autorisé", Toast.LENGTH_LONG).show();
+            finish();
+        }
+    }
+
+    @SuppressWarnings( {"MissingPermission"})
+    private void enableLocationComponent(@NonNull Style loadedMapStyle) {
+        // Check if permissions are enabled and if not request
+        if (PermissionsManager.areLocationPermissionsGranted(this)) {
+
+        // Get an instance of the component
+            LocationComponent locationComponent = mapboxMap.getLocationComponent();
+
+        // Activate with options
+            locationComponent.activateLocationComponent(
+                    LocationComponentActivationOptions.builder(this, loadedMapStyle).build());
+
+        // Enable to make component visible
+            locationComponent.setLocationComponentEnabled(true);
+
+        // Set the component's camera mode
+            locationComponent.setCameraMode(CameraMode.TRACKING);
+
+        // Set the component's render mode
+            locationComponent.setRenderMode(RenderMode.COMPASS);
+        } else {
+            permissionsManager = new PermissionsManager(this);
+            permissionsManager.requestLocationPermissions(this);
+        }
     }
 }

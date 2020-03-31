@@ -75,13 +75,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/greenpp/Activities/mapBoxActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="58" column="74" lean-forward="true" selection-start-line="58" selection-start-column="74" selection-end-line="58" selection-end-column="74" />
+            <state relative-caret-position="285">
+              <caret line="190" column="37" selection-start-line="190" selection-start-column="31" selection-end-line="190" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#5519#5520#0" expanded="true" />
+                <element signature="e#5589#5590#0" expanded="true" />
+                <element signature="e#5774#5815#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -106,7 +109,7 @@
           <provider editor-type-id="android-designer2" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/greenpp/Activities/NouvellePoubelleActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
@@ -245,7 +248,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/greenpp/Helper/PoubelleUtils.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/greenpp/Entities/Poubelle.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_map_box.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/greenpp/Activities/mapBoxActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/plant_item.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/greenpp/Adapter/PoubelleAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/greenpp/Fragments/PoubelleRecycler.java" />
@@ -253,10 +255,11 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_nouvelle_poubelle.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/greenpp/Activities/ActionActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/greenpp/Activities/NouvellePoubelleActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/greenpp/Activities/mapBoxActivity.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="2400" />
     <option name="height" value="1350" />
   </component>
@@ -542,10 +545,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29060403" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29060403" />
       <window_info id="Structure" order="1" weight="0.24969475" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" side_tool="true" />
@@ -564,9 +566,9 @@
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.8208054" weight="0.36685553" />
       <window_info anchor="bottom" id="Android Profiler" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.17919463" side_tool="true" weight="0.36827195" />
-      <window_info anchor="bottom" id="Logcat" order="10" visible="true" weight="0.28186968" />
+      <window_info anchor="bottom" id="Logcat" order="10" weight="0.28186968" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32958034" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.497558" weight="0.32719547" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.497558" visible="true" weight="0.32719547" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32958034" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -985,20 +987,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/greenpp/Activities/mapBoxActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="58" column="74" lean-forward="true" selection-start-line="58" selection-start-column="74" selection-end-line="58" selection-end-column="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/greenpp/Activities/NouvellePoubelleActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="55" column="83" selection-start-line="55" selection-start-column="83" selection-end-line="55" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/greenpp/Activities/mapBoxActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="190" column="37" selection-start-line="190" selection-start-column="31" selection-end-line="190" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5519#5520#0" expanded="true" />
+            <element signature="e#5589#5590#0" expanded="true" />
+            <element signature="e#5774#5815#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
