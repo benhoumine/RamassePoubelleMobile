@@ -1,5 +1,6 @@
 package com.example.greenpp.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -22,6 +23,7 @@ import java.util.Map;
 public class ActionActivity extends AppCompatActivity {
 
     private Button buttonVider;
+    private Button nouvellePoubelle;
     private Poubelle poubelle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +36,6 @@ public class ActionActivity extends AppCompatActivity {
         this.buttonVider = (Button) findViewById(R.id.buttonVider);
         buttonVider.setOnClickListener(view -> {
 
-            System.out.println("helo clicked");
             RequestQueue queue = Volley.newRequestQueue(ActionActivity.this);
             String url = Parameters.URL_SERVER+Parameters.PORT+"/poubelles/vider";
             StringRequest postRequest = new StringRequest(Request.Method.POST, url,
@@ -44,6 +45,8 @@ public class ActionActivity extends AppCompatActivity {
                         public void onResponse(String response) {
                             // response
                             Log.d("Response", response);
+                            Intent intent = new Intent(ActionActivity.this, MainActivity.class);
+                            ActionActivity.this.startActivity(intent);
                         }
                     },
                     new Response.ErrorListener()
@@ -68,5 +71,12 @@ public class ActionActivity extends AppCompatActivity {
 
 
         });
+
+        this.nouvellePoubelle = (Button) findViewById(R.id.buttonNouvelePoubelle);
+        this.nouvellePoubelle.setOnClickListener(view -> {
+            Intent intent = new Intent(ActionActivity.this, NouvellePoubelleActivity.class);
+            ActionActivity.this.startActivity(intent);
+        });
+
     }
 }

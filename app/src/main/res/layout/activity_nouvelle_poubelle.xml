@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.NouvellePoubelleActivity"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/editTextAdresse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Adresse de la poubelle" />
+
+    <EditText
+        android:id="@+id/editTextCapacité"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Capacité de la poubelle" />
+    <EditText
+        android:id="@+id/editTextLatitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Latitude" />
+    <EditText
+        android:id="@+id/editTextLongitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Longitude" />
+
+    <Button
+        android:id="@+id/buttonAjouter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ajouter"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"/>
+</LinearLayout>
