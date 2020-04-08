@@ -11,6 +11,8 @@ import com.example.greenpp.R;
 import com.google.gson.Gson;
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
+import com.mapbox.api.directions.v5.MapboxDirections;
+import com.mapbox.api.directions.v5.models.DirectionsRoute;
 import com.mapbox.geojson.Feature;
 import com.mapbox.geojson.FeatureCollection;
 import com.mapbox.geojson.Point;
@@ -48,6 +50,17 @@ public class mapBoxActivity extends AppCompatActivity implements
     private static final String LAYER_ID = "LAYER_ID";
 
     private PermissionsManager permissionsManager;
+
+    private static final String ROUTE_LAYER_ID = "route-layer-id";
+    private static final String ROUTE_SOURCE_ID = "route-source-id";
+    private static final String ICON_LAYER_ID = "icon-layer-id";
+    private static final String ICON_SOURCE_ID = "icon-source-id";
+    private static final String RED_PIN_ICON_ID = "red-pin-icon-id";
+    private DirectionsRoute currentRoute;
+    private MapboxDirections client;
+    private Point origin;
+    private Point destination;
+    //final LocationEngine locationEngine = LocationEngineProvider.getBestLocationEngine(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +101,11 @@ public class mapBoxActivity extends AppCompatActivity implements
                         ), new Style.OnStyleLoaded() {
                     @Override
                     public void onStyleLoaded(@NonNull Style style) {
+                        // Set the origin location to the user location.
+                        origin = Point.fromLngLat(3.120664596557617, 45.76469039916992);
+
+                        // Set the destination location to the gzrbage location.
+                        destination = Point.fromLngLat(mapBoxActivity.this.poubelle.getLongitude(), mapBoxActivity.this.poubelle.getLatitude());
 
                         enableLocationComponent(style);
 
