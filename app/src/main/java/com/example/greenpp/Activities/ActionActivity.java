@@ -1,5 +1,6 @@
 package com.example.greenpp.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -23,6 +24,7 @@ import java.util.Map;
 public class ActionActivity extends AppCompatActivity {
 
     private Button buttonVider;
+    private Button nouvellePoubelle;
     private Poubelle poubelle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +36,49 @@ public class ActionActivity extends AppCompatActivity {
         this.poubelle = gson.fromJson(poubelleJson, Poubelle.class);
         this.buttonVider = (Button) findViewById(R.id.buttonVider);
         buttonVider.setOnClickListener(view -> {
-            this.poubelle.setCapacity(0.0);
-            //Update capacity in bdd
+
+            RequestQueue queue = Volley.newRequestQueue(ActionActivity.this);
+            String url = Parameters.URL_SERVER+Parameters.PORT+"/poubelles/vider";
+            StringRequest postRequest = new StringRequest(Request.Method.POST, url,
+                    new Response.Listener<String>()
+                    {
+                        @Override
+                        public void onResponse(String response) {
+                            // response
+                            Log.d("Response", response);
+                            Intent intent = new Intent(ActionActivity.this, MainActivity.class);
+                            ActionActivity.this.startActivity(intent);
+                        }
+                    },
+                    new Response.ErrorListener()
+                    {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            // error
+                            Log.d("error", String.valueOf(error));
+                        }
+                    }
+            ) {
+                @Override
+                protected Map<String, String> getParams()
+                {
+                    Map<String, String> params = new HashMap<>();
+                    System.out.println("Poubelle à vider : " + ActionActivity.this.poubelle.getId().toString());
+                    params.put("id",ActionActivity.this.poubelle.getId().toString());
+                    return params;
+                }
+            };
+            queue.add(postRequest);
+
+
         });
+
+        this.nouvellePoubelle = (Button) findViewById(R.id.buttonNouvelePoubelle);
+        this.nouvellePoubelle.setOnClickListener(view -> {
+            Intent intent = new Intent(ActionActivity.this, NouvellePoubelleActivity.class);
+            ActionActivity.this.startActivity(intent);
+        });
+
     }
 
 

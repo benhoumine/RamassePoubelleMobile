@@ -16,4 +16,13 @@
         android:onClick="onClickButton"
         android:text="Vider la poubelle" />
 
+
+    <Button
+        android:id="@+id/buttonNouvelePoubelle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Créer une nouvelle poubelle"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"/>
+
 </LinearLayout>
